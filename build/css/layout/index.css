@@ -1,0 +1,19 @@
+.header {
+  background-color: #000000;
+}
+.header h1 {
+  color: #ffffff;
+}
+
+.navegacion-principal a {
+  color: #ffffff;
+  font-size: 2.4rem;
+}
+.navegacion-principal a:hover {
+  color: #FEF46D;
+}
+
+.prueba {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
