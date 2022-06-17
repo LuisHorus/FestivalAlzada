@@ -2,10 +2,12 @@
 @use '../base/mixins' as m;
 
 .header{
-    background-color: v.$negro;
+    background-color: v.$negro; 
 
     h1{
+        text-transform: uppercase;
         color:v.$blanco;
+        letter-spacing: 2px;
         text-align: center;
         @include m.tablet{
             margin: 0;    
@@ -18,6 +20,7 @@
             display:flex;
             justify-content: space-between;
             align-items: center;
+        
         }
     }
 }
