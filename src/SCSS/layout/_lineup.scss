@@ -1,0 +1,78 @@
+@use "../base/mixins" as m;
+@use "../base/variables" as v;
+
+.lineup {
+  background-color: v.$rosa;
+  padding: 5rem 0;
+
+  h3,
+  p {
+    text-align: center;
+    color: v.$blanco;
+    font-weight: bold;
+  }
+  .dia {
+    text-transform: uppercase;
+    margin: 5rem 0 5rem 0;
+  }
+}
+.escenarios-contenedor {
+  @include m.tablet {
+    @include m.grid(2, 5rem);
+  }
+  p {
+    color: v.$negro;
+    font-weight: bold;
+  }
+}
+.escenario {
+  padding-top: 2rem;
+  margin: 2rem 0;
+
+  .nombre-escenario {
+    &:after {
+      content: "";
+      display: block;
+      width: 20rem;
+      height: 15rem;
+      background-size: 15rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      margin: 2rem auto 0 auto;
+    }
+  }
+}
+
+.edm .nombre-escenario:after {
+  background-image: url(../img/micro.png);
+}
+.rock .nombre-escenario:after {
+  background-image: url(../img/audifonos.png);
+}
+
+.calendario{
+    @include m.resetear-lista;
+    li{
+        padding: 2.5rem;
+        font-weight: 700;
+        span{
+            font-weight: 400;
+        }
+    }
+}
+
+.bg-amarillo {
+  background-color: v.$amarillo;
+  border-radius: 4px;
+
+  li:nth-child(odd){
+    background-color: darken(v.$amarillo,15%);
+  }
+}
+.bg-verde {
+  background-color: v.$verde;
+  border-radius: 4px;
+  li:nth-child(odd){
+    background-color: darken(v.$verde,10%);
+  }
+}

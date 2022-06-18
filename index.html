@@ -1,62 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Festival ALZADA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400;1,700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400;1,700&family=Quicksand:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-<body>
+    <link rel="stylesheet" href="build/css/app.css" />
+  </head>
+  <body>
     <header class="header">
-        <div class="contenedor contenido-header">
-            <h1>Familia ALZADA</h1>
+      <div class="contenedor contenido-header">
+        <h1>Familia ALZADA</h1>
 
-            <nav class="navegacion-principal">
-                <a href="#">Line Up</a>
-                <a href="#">Galeria</a>
-                <a href="#">Boletos</a>
-            </nav>
-
-        </div>
+        <nav class="navegacion-principal">
+          <a href="#">Line Up</a>
+          <a href="#">Galeria</a>
+          <a href="#">Boletos</a>
+        </nav>
+      </div>
     </header>
-    
-    
+
     <div class="video">
-        <div class="overlay">
-            <div class="contenedor contenido-video">
-                <h2>La Familia Alzada</h2>
-                <p>Septiembre 2022 Ciudad de México, Mexico</p>
-            </div>
+      <div class="overlay">
+        <div class="contenedor contenido-video">
+          <h2>La Familia Alzada</h2>
+          <p>Septiembre 2022 Ciudad de México, Mexico</p>
         </div>
-        <video autoplay loop muted>
-            <source src="video/Alzada - La Familia (Video Oficial).mp4" type="video/mp4">
-            <source src="video/concierto.ogg" type="video/ogg">
-            <source src="video/concierto.webm" type="video/webm">
-        </video>
+      </div>
+      <video autoplay loop muted>
+        <source
+          src="video/Alzada - La Familia (Video Oficial).mp4"
+          type="video/mp4"
+        />
+        <source src="video/concierto.ogg" type="video/ogg" />
+        <source src="video/concierto.webm" type="video/webm" />
+      </video>
     </div>
-    
+
     <section class="contenedor sobre-festival">
-        <div class="imagen">
-            <picture>
-                <source srcset="build/img/alzada/familia.webp" type="image/webp" alt="La familia">
-                <img loading="lazy" width="200px" height="300px" src="build/img/alzada/familia.jpg" alt="Alzada">
-            </picture>
-        </div>
-        <div class="contenido-festival">
-            <h2>Concierto ALZADA</h2>
-            <p class="fecha">10 de Septiembre 2022, Pepsi Center Ciudad de México</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos ab non eum eligendi odit a distinctio quia placeat, alias facere iure est, animi nulla. Corrupti at numquam sit excepturi a.</p>
-        </div>
+      <div class="imagen">
+        <picture>
+          <source
+            srcset="build/img/alzada/familia.webp"
+            type="image/webp"
+            alt="La familia"
+          />
+          <img
+            loading="lazy"
+            width="200px"
+            height="300px"
+            src="build/img/alzada/familia.jpg"
+            alt="Alzada"
+          />
+        </picture>
+      </div>
+      <div class="contenido-festival">
+        <h2>Concierto ALZADA</h2>
+        <p class="fecha">
+          10 de Septiembre 2022, Pepsi Center Ciudad de México
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos ab non
+          eum eligendi odit a distinctio quia placeat, alias facere iure est,
+          animi nulla. Corrupti at numquam sit excepturi a.
+        </p>
+      </div>
     </section>
 
-    
-    
+    <section class="lineup">
+      <h3>Line Up</h3>
+      <p class="dia">Sabado 10 de Septiembre</p>
+      <div class="escenarios-contenedor contenedor">
+        <div class="escenario rock bg-amarillo">
+          <p class="nombre-escenario">Escenario Alzada</p>
+          <ul class="calendario">
+            <li>
+              24:00 | <span>Lefty SM</span>
+          </li>
+          <li>
+              22:00 | <span>Yoss Bones</span>
+          </li>
+          <li>
+              20:00 | <span>Neto Peña</span>
+          </li>
+          <li>
+              19:00 | <span>Toser One</span>
+          </li>
+          <li>
+              18:00 | <span>Almanegra</span>
+          </li>
+          <li>
+              17:00 | <span>30 Seconds to Santa Fe Klan</span>
+          </li>
+          </ul>
+        </div>
 
-
-</body>
+        <div class="escenario edm bg-verde">
+          <p class="nombre-escenario">Escenario EDM</p>
+          <ul class="calendario">
+            <li>
+              24:00 | <span>Zornoza</span>
+          </li>
+          <li>
+              22:00 | <span>Zxmyr</span>
+          </li>
+          <li>
+              20:00 | <span>Dannitik</span>
+          </li>
+          <li>
+              19:00 | <span>Cirujao Resendez</span>
+          </li>
+          
+          <li>
+              18:00 | <span>Chato 473</span>
+          </li>
+          <li>
+              17:00 | <span>Zoop One</span>
+          </li>
+          
+          </ul>
+       </div>
+      </div>
+      
+      <p class="dia">Domingo 11 de Septiembre</p>
+       <div class="escenarios-contenedor contenedor">
+         <div class="escenario rock bg-verde">
+           <p class="nombre-escenario">Escenario Alzada</p>
+           <ul class="calendario">
+            <li>
+              24:00 | <span>Lefty SM</span>
+          </li>
+          <li>
+              22:00 | <span>Yoss Bones</span>
+          </li>
+          <li>
+              20:00 | <span>Neto Peña</span>
+          </li>
+          <li>
+              19:00 | <span>Toser One</span>
+          </li>
+          <li>
+              18:00 | <span>Almanegra</span>
+          </li>
+          <li>
+              17:00 | <span>30 Seconds to Santa Fe Klan</span>
+          </li>
+           </ul>
+         </div>
+ 
+         <div class="escenario edm bg-amarillo">
+           <p class="nombre-escenario">Escenario EDM</p>
+           <ul class="calendario">
+            <li>
+              24:00 | <span>Zornoza</span>
+          </li>
+          <li>
+              22:00 | <span>Zxmyr</span>
+          </li>
+          <li>
+              20:00 | <span>Dannitik</span>
+          </li>
+          <li>
+              19:00 | <span>Cirujao Resendez</span>
+          </li>
+          
+          <li>
+              18:00 | <span>Chato 473</span>
+          </li>
+          <li>
+              17:00 | <span>Zoop One</span>
+          </li>
+           </ul>
+        </div>
+       </div>  
+    </section>
+  </body>
 </html>
