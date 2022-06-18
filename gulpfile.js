@@ -59,17 +59,17 @@ function versionAvif(done){
 
 function javascript(done){
     src('src/js/**/*.js')
-    .pipe(dest('build/js'));
-    done()
+    .pipe(dest('build/js'))
+    done();
 }
 
 function dev(done){
     watch("src/SCSS/**/*.scss", css);
-    watch("src/SCSS/**/*.js", javascript);
+    watch("src/js/**/*.js", javascript);
     done();
 }
 exports.css = css;
-exports,js = javascript;
+exports.js = javascript;
 exports.imagenes=imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif=versionAvif;
