@@ -13,7 +13,14 @@ function crearGaleria(){
         <source srcset="../build/img/thumb/${i}.webp" type="image/webp" alt="La familia"/>
         <img loading="lazy" width="200px" height="300px" src="../build/img/thumb/${i}.jpg" alt="imagen galeria"/>
           `; 
+
+          imagen.onclick=function(){
+            mostrarImagen(i);
+          }
           
           galeria.appendChild(imagen);
     }
+}
+function mostrarImagen(id){
+    console.log("mostrando...",id);
 }
