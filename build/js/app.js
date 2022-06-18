@@ -3,8 +3,38 @@ document.addEventListener('DOMContentLoaded',function(){
     inicarApp();
 });
 function inicarApp(){
+    navegacionFija();  
     crearGaleria();
+    scrollNav();
 }
+
+//NAvegacion Fija
+function navegacionFija() {
+  const e = document.querySelector(".header"),
+    t = document.querySelector(".sobre-festival"),
+    n = document.querySelector("body");
+  window.addEventListener("scroll", function () {
+    t.getBoundingClientRect().bottom < 0
+      ? (e.classList.add("fijo"), n.classList.add("body-scroll"))
+      : (e.classList.remove("fijo"), n.classList.remove("body-scroll"));
+  });
+}
+
+
+//Scrooll Enlaces JS
+function scrollNav(){
+  const enlaces = document.querySelectorAll('.navegacion-principal a');
+  enlaces.forEach(enlace=>{
+    enlace.addEventListener('click', function(e){
+      e.preventDefault();
+      const seccionScroll= e.target.attributes.href.value;
+      const seccion=document.querySelector(seccionScroll);
+      seccion.scrollIntoView({behaviur:"smooth"});
+    });
+  });
+}
+
+
 function crearGaleria(){
     const galeria = document.querySelector('.galeria-imagenes');
     for(let i = 1; i <= 12; i++){
