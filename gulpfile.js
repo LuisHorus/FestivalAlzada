@@ -1,34 +1,31 @@
-const { src, dest, watch, parallel } = require("gulp");
+const { src, dest, watch, parallel } = require('gulp');
 
-//CSS
-const sass = require("gulp-sass")(require("sass"));
+// CSS
+const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
-const autoprefixer= require('autoprefixer');
+const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const postcss = require('postcss');
-const sourcemaps = require('gulp-sourcemaps')
+const postcss = require('gulp-postcss');
+const sourcemaps = require('gulp-sourcemaps');
 
-//imagenes
+// Imagenes
+const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
-const cache =require('gulp-cache');
 const avif = require('gulp-avif');
 
+// Javascript
+const terser = require('gulp-terser-js');
 
-//JAVASCRIOT
-const terser=require('gulp-terser-js');
-
-function css(done){
-
-    src('src/SCSS/**/*.scss') //Identificar el archivo SASS
+function css( done ) {
+    src('src/scss/**/*.scss') // Identificar el archivo .SCSS a compilar
         .pipe(sourcemaps.init())
-        .pipe(plumber())
-        .pipe( sass() ) //compilarlo
-        .pipe(postcss([autoprefixer(), cssnano() ]))
+        .pipe( plumber())
+        .pipe( sass() ) // Compilarlo
+        .pipe( postcss([ autoprefixer(), cssnano() ]) )
         .pipe(sourcemaps.write('.'))
-        .pipe( dest("build/css") ); //almacenarlo en el disco duro
-
-    done(); //callback que avisa a gulp cuando llegamos a final
+        .pipe( dest('build/css') ) // Almacenarla en el disco duro
+    done();
 }
 
 function imagenes(done) {
@@ -64,22 +61,29 @@ function versionAvif( done ) {
 function javascript( done ) {
     src('src/js/**/*.js')
         .pipe(sourcemaps.init())
-        .pipe(terser())
+        .pipe( terser() )
         .pipe(sourcemaps.write('.'))
         .pipe(dest('build/js'));
 
     done();
 }
 
-
-function dev(done){
-    watch("src/SCSS/**/*.scss", css);
-    watch("src/js/**/*.js", javascript);
+function dev( done ) {
+    watch('src/scss/**/*.scss', css);
+    watch('src/js/**/*.js', javascript);
     done();
 }
+
+function tarea (done) {
+    console.log('Desde la primera tarea');
+    done();
+}
+ 
+exports.tarea = tarea;
+
 exports.css = css;
 exports.js = javascript;
-exports.imagenes=imagenes;
+exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
-exports.versionAvif=versionAvif;
+exports.versionAvif = versionAvif;
 exports.dev = parallel( imagenes, versionWebp, versionAvif, javascript, dev) ;
