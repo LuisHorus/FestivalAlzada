@@ -15,6 +15,9 @@ const cache =require('gulp-cache');
 const avif = require('gulp-avif');
 
 
+//JAVASCRIOT
+const terser=require('gulp-terser-js');
+
 function css(done){
 
     src('src/SCSS/**/*.scss') //Identificar el archivo SASS
@@ -60,7 +63,9 @@ function versionAvif( done ) {
 
 function javascript( done ) {
     src('src/js/**/*.js')
-
+        .pipe(sourcemaps.init())
+        .pipe(terser())
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('build/js'));
 
     done();
